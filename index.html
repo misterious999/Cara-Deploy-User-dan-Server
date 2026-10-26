@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zeroix Panel Guide - Quick Copy Tool</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        darkBg: '#0d1117',
+                        cardBg: '#161b22',
+                        cardBorder: '#30363d',
+                        accentBlue: '#58a6ff',
+                        accentBtn: '#238636',
+                        accentBtnHover: '#2ea043',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0d1117;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #30363d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #484f58;
+        }
+    </style>
+</head>
+<body class="bg-darkBg text-[#c9d1d9] font-sans min-h-screen flex flex-col justify-between selection:bg-[#1f6beb] selection:text-white">
+
+    <!-- Header Section -->
+    <header class="border-b border-cardBorder bg-cardBg/80 backdrop-blur sticky top-0 z-40">
+        <div class="max-w-4xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-accentBlue/10 border border-accentBlue/30 flex items-center justify-center text-accentBlue font-bold text-xl">
+                    ⚡
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold text-white tracking-wide">Zeroix Panel Guide</h1>
+                    <p class="text-xs text-gray-400">Quick Copy Tool & Dokumentasi CS Admin</p>
+                </div>
+            </div>
+            <a href="https://zeroixdarkmarket.web.id" target="_blank" rel="noopener noreferrer" class="text-xs text-accentBlue hover:underline flex items-center gap-1 bg-accentBlue/10 px-3 py-1.5 rounded-lg border border-accentBlue/20">
+                🌐 zeroixdarkmarket.web.id
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="max-w-4xl mx-auto px-4 py-6 w-full flex-grow">
+        
+        <!-- Search & Info Bar -->
+        <div class="mb-6 flex flex-col sm:flex-row gap-3 justify-between items-center">
+            <div class="relative w-full sm:w-80">
+                <input type="text" id="searchInput" oninput="filterGuides()" placeholder="Cari panduan (misal: deploy, ram)..." class="w-full bg-cardBg border border-cardBorder rounded-lg px-4 py-2.5 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-accentBlue transition duration-200 pl-10">
+                <svg class="w-4 h-4 text-gray-500 absolute left-3 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                </svg>
+            </div>
+            <div class="text-xs text-gray-400 bg-cardBg px-3 py-2 rounded-lg border border-cardBorder w-full sm:w-auto text-center">
+                💡 Klik <span class="text-accentBlue font-semibold">"Salin Format Chat"</span> untuk kirim langsung ke pelanggan.
+            </div>
+        </div>
+
+        <!-- Guides Container -->
+        <div class="space-y-6" id="guidesContainer">
+            
+            <!-- CARD 1: USER + SERVER -->
+            <div class="guide-card bg-cardBg border border-cardBorder rounded-xl p-5 shadow-lg transition duration-200 hover:border-accentBlue/40">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-cardBorder">
+                    <div>
+                        <span class="inline-block bg-accentBlue/10 text-accentBlue text-xs font-semibold px-2.5 py-1 rounded-md mb-2 border border-accentBlue/20">
+                            Paket Lengkap
+                        </span>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            🚀 Cara Membuat User & Server Panel Sekaligus
+                        </h2>
+                    </div>
+                    <button onclick="copySection('textFullPacket', this)" class="bg-accentBtn hover:bg-accentBtnHover text-white text-xs font-semibold px-4 py-2.5 rounded-lg border border-green-600 flex items-center justify-center gap-2 transition duration-200 shadow-md shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                        </svg>
+                        <span>📋 Salin Format Chat</span>
+                    </button>
+                </div>
+
+                <!-- Step Lists -->
+                <ol class="mt-4 space-y-3 text-sm leading-relaxed text-gray-300">
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">1</span>
+                        <div><strong class="text-white">Login ke Dashboard:</strong> Masuk ke <code class="bg-darkBg px-1.5 py-0.5 rounded text-accentBlue text-xs">zeroixdarkmarket.web.id/dashboard</code> menggunakan username & password dari admin.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">2</span>
+                        <div><strong class="text-white">Pilih Fitur Automasi:</strong> Klik tombol <span class="bg-darkBg border border-cardBorder px-2 py-0.5 rounded text-xs text-white">"AUTOMASI DEPLOY (USER+SERVER)"</span>.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">3</span>
+                        <div><strong class="text-white">Isi Spesifikasi:</strong> Masukkan data panel sesuai kebutuhan bot kamu.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">4</span>
+                        <div><strong class="text-white">Eksekusi Deploy:</strong> Klik tombol <span class="bg-darkBg border border-cardBorder px-2 py-0.5 rounded text-xs text-green-400">"Jalankan Deploy +"</span>.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">5</span>
+                        <div><strong class="text-white">Dapatkan Akses Login:</strong> Sistem otomatis menerbitkan <em>Struk Transaksi</em> (tombol kanan) & <em>Data Login Panel Pterodactyl</em> (tombol kiri).</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">6</span>
+                        <div><strong class="text-white">Atur Masa Aktif:</strong> Di tabel <em>"Basis Data Pengguna"</em>, cari username tadi lalu klik <span class="bg-darkBg border border-cardBorder px-2 py-0.5 rounded text-xs text-amber-300">"Konfigurasi"</span> untuk atur tanggal expired dalam hitungan hari.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-accentBlue/20 text-accentBlue text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">7</span>
+                        <div><strong class="text-white">Selesai!</strong> Panel otomatis aktif dan siap digunakan.</div>
+                    </li>
+                </ol>
+
+                <!-- Hidden Raw Text for Clipboard -->
+                <textarea id="textFullPacket" class="hidden">🚀 Cara Membuat User & Server Panel Sekaligus (Paket Lengkap)
+
+1. Login ke Dashboard: Masuk ke zeroixdarkmarket.web.id/dashboard menggunakan username & password dari admin.
+2. Pilih Fitur Automasi: Klik tombol "AUTOMASI DEPLOY (USER+SERVER)".
+3. Isi Spesifikasi: Masukkan data panel sesuai kebutuhan bot kamu.
+4. Eksekusi Deploy: Klik tombol "Jalankan Deploy +".
+5. Dapatkan Akses Login: Sistem akan otomatis menerbitkan Struk Transaksi (tombol sebelah kanan) dan Data Login Panel Pterodactyl (tombol sebelah kiri).
+6. Atur Masa Aktif: Pada tabel "Basis Data Pengguna", cari username yang baru dibuat. Klik tombol "Konfigurasi" di baris tersebut untuk menentukan tanggal kadaluarsa (expired) server dalam hitungan hari.
+7. Selesai! Panel otomatis aktif dan siap digunakan.</textarea>
+            </div>
+
+
+            <!-- CARD 2: EXISTING USER SERVER -->
+            <div class="guide-card bg-cardBg border border-cardBorder rounded-xl p-5 shadow-lg transition duration-200 hover:border-accentBlue/40">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-cardBorder">
+                    <div>
+                        <span class="inline-block bg-purple-500/10 text-purple-400 text-xs font-semibold px-2.5 py-1 rounded-md mb-2 border border-purple-500/20">
+                            Server Tambahan
+                        </span>
+                        <h2 class="text-lg font-bold text-white flex items-center gap-2">
+                            ➕ Cara Menambah Server di Username yang Sudah Ada
+                        </h2>
+                    </div>
+                    <button onclick="copySection('textAddServer', this)" class="bg-accentBtn hover:bg-accentBtnHover text-white text-xs font-semibold px-4 py-2.5 rounded-lg border border-green-600 flex items-center justify-center gap-2 transition duration-200 shadow-md shrink-0">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+                        </svg>
+                        <span>📋 Salin Format Chat</span>
+                    </button>
+                </div>
+
+                <!-- Step Lists -->
+                <ol class="mt-4 space-y-3 text-sm leading-relaxed text-gray-300">
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">1</span>
+                        <div><strong class="text-white">Masuk Dashboard:</strong> Akses halaman dashboard kamu.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">2</span>
+                        <div><strong class="text-white">Pilih Alokasi Tambahan:</strong> Klik menu <span class="bg-darkBg border border-cardBorder px-2 py-0.5 rounded text-xs text-white">"ALOKASI SERVER TAMBAHAN"</span>.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">3</span>
+                        <div><strong class="text-white">Pilih User Target:</strong> Pilih username pelanggan yang sudah pernah terdaftar.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">4</span>
+                        <div><strong class="text-white">Set Atur Resource:</strong> Tentukan Nama Server, RAM, CPU, dan Disk (Penyimpanan) sesuai paket pesanan.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">5</span>
+                        <div><strong class="text-white">Eksekusi:</strong> Klik tombol <span class="bg-darkBg border border-cardBorder px-2 py-0.5 rounded text-xs text-green-400">"Jalankan Deploy +"</span>.</div>
+                    </li>
+                    <li class="flex items-start gap-2.5 bg-darkBg/50 p-3 rounded-lg border border-cardBorder/50">
+                        <span class="bg-purple-500/20 text-purple-400 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">6</span>
+                        <div><strong class="text-white">Selesai!</strong> Struk otomatis muncul di layar & server tambahan resmi aktif.</div>
+                    </li>
+                </ol>
+
+                <!-- Hidden Raw Text for Clipboard -->
+                <textarea id="textAddServer" class="hidden">➕ Cara Menambah Server Baru di Username yang Sudah Ada
+
+1. Masuk Dashboard: Akses halaman dashboard kamu.
+2. Pilih Alokasi Tambahan: Klik menu "ALOKASI SERVER TAMBAHAN".
+3. Pilih User Target: Pilih username pelanggan yang sudah pernah terdaftar.
+4. Set Atur Resource: Tentukan Nama Server, RAM, CPU, dan Disk (Penyimpanan) sesuai paket pesanan.
+5. Eksekusi: Klik tombol "Jalankan Deploy +".
+6. Selesai! Begitu struk otomatis muncul di layar, server tambahan resmi aktif dan terhubung ke akun tersebut.</textarea>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-cardBorder py-4 mt-8 bg-cardBg text-center text-xs text-gray-500">
+        &copy; ZeroixDark Market — Documentation & Quick Reply Tool
+    </footer>
+
+    <!-- Floating Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-green-600 text-white px-4 py-3 rounded-xl shadow-2xl flex items-center gap-3 transition-all duration-300 opacity-0 translate-y-10 pointer-events-none z-50 border border-green-400/30">
+        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+        </svg>
+        <span class="text-sm font-medium">Teks berhasil disalin! Siap dipaste di chat.</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        function copySection(elementId, btnElement) {
+            const textToCopy = document.getElementById(elementId).value;
+
+            // Robust copy mechanism for frames & modern browsers
+            const tempArea = document.createElement("textarea");
+            tempArea.value = textToCopy;
+            document.body.appendChild(tempArea);
+            tempArea.select();
+            tempArea.setSelectionRange(0, 99999); // Mobile compatibility
+
+            try {
+                document.execCommand('copy');
+                showToast();
+                
+                // Temporary Button State Visual Feedback
+                const originalText = btnElement.innerHTML;
+                btnElement.innerHTML = `
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                    <span>Tersalin!</span>
+                `;
+                btnElement.classList.remove('bg-accentBtn', 'hover:bg-accentBtnHover');
+                btnElement.classList.add('bg-blue-600', 'border-blue-400');
+
+                setTimeout(() => {
+                    btnElement.innerHTML = originalText;
+                    btnElement.classList.remove('bg-blue-600', 'border-blue-400');
+                    btnElement.classList.add('bg-accentBtn', 'hover:bg-accentBtnHover');
+                }, 2000);
+
+            } catch (err) {
+                console.error("Gagal menyalin teks", err);
+            } finally {
+                document.body.removeChild(tempArea);
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'translate-y-10', 'pointer-events-none');
+            toast.classList.add('opacity-100', 'translate-y-0');
+
+            setTimeout(() => {
+                toast.classList.remove('opacity-100', 'translate-y-0');
+                toast.classList.add('opacity-0', 'translate-y-10', 'pointer-events-none');
+            }, 2500);
+        }
+
+        function filterGuides() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.guide-card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
